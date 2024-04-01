@@ -1,5 +1,6 @@
 import allure
 from pages.base_page import BasePage
+from data import TestsData as td
 
 
 # Класс главной страницы
@@ -7,7 +8,7 @@ class HomePage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
-        driver.get('https://qa-scooter.praktikum-services.ru/')
+        driver.get(td.urls['home_page'])
 
     @allure.step('Раскрываем блок с вопросом FAQ и получаем текст ответа')
     def get_question_text(self, locator_question, locator_answer):
